@@ -7,4 +7,4 @@ on:
 
 jobs:
   bin_release:
-    uses: mdanialr/ci-cd-test/.github/workflows/release.yml
+    uses: ./.github/workflows/release.yml
