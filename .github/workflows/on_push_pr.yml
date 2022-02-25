@@ -1,0 +1,11 @@
+name: Run Continuous Integration
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-ci:
+    uses: mdanialr/ci-cd-test/.github/workflows/ci.yml

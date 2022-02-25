@@ -1,0 +1,10 @@
+name: Build Docker Image & Bin File Release
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  bin_release:
+    uses: mdanialr/ci-cd-test/.github/workflows/release.yml
