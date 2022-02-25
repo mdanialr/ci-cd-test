@@ -6,5 +6,8 @@ on:
       - v*
 
 jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
   bin_release:
+    needs: ci
     uses: ./.github/workflows/release.yml
