@@ -9,14 +9,23 @@ jobs:
   ci:
     name: Continuous Integrations
     uses: ./.github/workflows/ci.yml
-  bin_release:
-    name: Build and Release Binary
-    needs: ci
-    uses: ./.github/workflows/release.yml
   docker_deployment:
     name: Deploy to Docker Hub
     needs: ci
-    uses: ./.github/workflows/docker.yml
-    with:
-      username: ${{ secrets.DOCKER_HUB_USERNAME }}
-      token: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+      - name: Build & Push Image
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: nzk7/personal:ci-cd-test
+  bin_release:
+    name: Build and Release Binary
+    needs: docker_deployment
+    uses: ./.github/workflows/release.yml
