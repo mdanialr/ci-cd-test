@@ -11,3 +11,6 @@ jobs:
   bin_release:
     needs: ci
     uses: ./.github/workflows/release.yml
+  docker_deployment:
+    needs: ci
+    uses: ./.github/workflows/docker.yml
