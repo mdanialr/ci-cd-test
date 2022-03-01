@@ -6,9 +6,9 @@ on:
       username:
         required: true
         type: string
-    secrets:
       token:
         required: true
+        type: string
 
 jobs:
   build-and-push:
@@ -19,7 +19,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           username: ${{ inputs.username }}
-          password: ${{ secrets.token }}
+          password: ${{ inputs.token }}
 
       - name: Build & Push Image
         uses: docker/build-push-action@v2
