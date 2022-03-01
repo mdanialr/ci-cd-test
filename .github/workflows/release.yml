@@ -4,6 +4,7 @@ on: workflow_call
 
 jobs:
   release:
+    name: Build Binary and Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

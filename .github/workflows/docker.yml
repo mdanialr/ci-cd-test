@@ -11,7 +11,8 @@ on:
         required: true
 
 jobs:
-  build-and-psuh:
+  build-and-push:
+    name: Build and Push Job
     runs-on: ubuntu-latest
     steps:
       - name: Login to DockerHub

@@ -8,4 +8,5 @@ on:
 
 jobs:
   run-ci:
+    name: Run CI
     uses: ./.github/workflows/ci.yml

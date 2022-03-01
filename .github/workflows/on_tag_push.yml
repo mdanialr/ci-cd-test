@@ -7,11 +7,14 @@ on:
 
 jobs:
   ci:
+    name: Continuous Integrations
     uses: ./.github/workflows/ci.yml
   bin_release:
+    name: Build and Release Binary
     needs: ci
     uses: ./.github/workflows/release.yml
   docker_deployment:
+    name: Deploy to Docker Hub
     needs: ci
     uses: ./.github/workflows/docker.yml
     with:
