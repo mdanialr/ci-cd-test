@@ -1,5 +1,3 @@
-name: CI Process
-
 on: workflow_call
 
 jobs:

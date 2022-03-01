@@ -1,10 +1,8 @@
-name: Compile & Release Process
-
 on: workflow_call
 
 jobs:
   release:
-    name: Build Binary and Release
+    name: Compile and Release Binary
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
