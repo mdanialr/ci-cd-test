@@ -17,7 +17,7 @@ func PrintName(w http.ResponseWriter, req *http.Request) {
 
 	res := struct {
 		Message string `json:"message"`
-	}{Message: fmt.Sprintf("Hey %s!", param)}
+	}{Message: fmt.Sprintf("Good day %s!", param)}
 
 	js, err := json.Marshal(res)
 	if err != nil {
