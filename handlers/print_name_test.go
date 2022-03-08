@@ -10,7 +10,7 @@ import (
 
 func TestPrintName(t *testing.T) {
 	const ROUTE = "/print/"
-	const EXPECT = "Good day "
+	const EXPECT = "Hi "
 
 	testCases := []struct {
 		name   string
