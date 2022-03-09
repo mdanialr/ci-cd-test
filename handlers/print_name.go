@@ -12,7 +12,7 @@ func PrintName(w http.ResponseWriter, req *http.Request) {
 	param := strings.TrimPrefix(req.URL.Path, "/print/")
 
 	if param == "" {
-		param = "there"
+		param = "lad"
 	}
 
 	res := struct {
