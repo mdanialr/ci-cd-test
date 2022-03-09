@@ -20,7 +20,7 @@ func TestPrintName(t *testing.T) {
 		{
 			name:   "Should return default value if no path provided",
 			route:  ROUTE,
-			expect: EXPECT + "there!",
+			expect: EXPECT + "lad!",
 		},
 		{
 			name:   "1# Should use the provided path instead default one",
